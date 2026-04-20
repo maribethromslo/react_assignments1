@@ -1,0 +1,119 @@
+/* 🌈 Global reset + font */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+
+  background: linear-gradient(
+    135deg,
+    #ff6b6b,
+    #f7b267,
+    #ffd93d,
+    #6bcB77,
+    #4d96ff,
+    #a66cff
+  );
+
+  min-height: 100vh;
+  color: #222;
+}
+
+/* 🧱 Layout container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 60px 20px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* 🏷 Title */
+h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+/* 📚 Project cards */
+.card {
+  width: calc(50% - 12px);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Make images fill the card width */
+.card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Project title */
+.card h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #4d96ff;
+}
+
+/* Description */
+.card p {
+  margin: 6px 0 10px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #333;
+}
+
+/* Link */
+.card a {
+  font-size: 0.95rem;
+  color: #4d96ff;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* 🌈 Subtle color variation per card */
+.card:nth-child(2) h2 { color: #ff6b6b; }
+.card:nth-child(3) h2 { color: #f7b267; }
+.card:nth-child(4) h2 { color: #6bcB77; }
+.card:nth-child(5) h2 { color: #4d96ff; }
+.card:nth-child(6) h2 { color: #a66cff; }
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 16px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card img {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
