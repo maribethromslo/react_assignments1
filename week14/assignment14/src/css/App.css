@@ -1,0 +1,301 @@
+/* ================================
+   FONTS
+   Import from Google Fonts via @import
+   ================================ */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap');
+
+/* ================================
+   GLOBAL RESET
+   ================================ */
+body {
+  margin: 0;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #ff6b6b,
+    #f7b267,
+    #ffd93d,
+    #6bcb77,
+    #4d96ff,
+    #a66cff
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #222;
+}
+
+/* ================================
+   NAVBAR
+   ================================ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0 40px;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  height: 56px;
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #fff;
+}
+
+.projects-page {
+  padding-top: 60px;
+}
+
+/* ================================
+   LAYOUT
+   ================================ */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  padding: 40px 24px 80px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ================================
+   PROJECT LIST (matches .container layout)
+   ================================ */
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  padding: 40px 24px 80px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ================================
+   PAGE HEADINGS
+   ================================ */
+h1 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 3rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  margin: 0 0 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ================================
+   CARDS
+   ================================ */
+.card {
+  width: calc(50% - 14px);
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 20px;
+  padding: 20px 22px 24px;
+  box-sizing: border-box;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.16),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Card image */
+.card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Card title */
+.card h2 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+  color: #4d96ff;
+}
+
+/* Rainbow color variation per card */
+.card:nth-child(1) h2 { color: #ff6b6b; }
+.card:nth-child(2) h2 { color: #f7a23a; }
+.card:nth-child(3) h2 { color: #4db86a; }
+.card:nth-child(4) h2 { color: #4d96ff; }
+.card:nth-child(5) h2 { color: #a66cff; }
+.card:nth-child(6) h2 { color: #ff6b6b; }
+
+/* Description text */
+.card p {
+  font-size: 0.93rem;
+  line-height: 1.55;
+  color: #444;
+  margin: 0;
+}
+
+/* Toggle button */
+.card button {
+  align-self: flex-start;
+  background: transparent;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  padding: 5px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+  color: #4d96ff;
+}
+
+/* Match button color to card h2 color */
+.card:nth-child(1) button { color: #ff6b6b; }
+.card:nth-child(2) button { color: #f7a23a; }
+.card:nth-child(3) button { color: #4db86a; }
+.card:nth-child(4) button { color: #4d96ff; }
+.card:nth-child(5) button { color: #a66cff; }
+.card:nth-child(6) button { color: #ff6b6b; }
+
+.card button:hover {
+  background: currentColor;
+  color: #fff;
+}
+
+/* View Project link */
+.card a {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #666;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.18s ease;
+}
+
+.card a:hover {
+  color: #222;
+  text-decoration: underline;
+}
+
+/* ================================
+   SEE MORE BUTTON
+   ================================ */
+.see-more-btn {
+  display: inline-block;
+  padding: 10px 32px;
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+  margin-bottom: 60px;
+}
+
+.see-more-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* ================================
+   ABOUT PAGE
+   ================================ */
+.about-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 120px 24px 80px;
+  text-align: center;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px 48px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.06);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.about-card p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #444;
+  margin: 0;
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .navbar ul {
+    gap: 20px;
+  }
+}
